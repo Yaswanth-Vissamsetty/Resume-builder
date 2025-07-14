@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeWizard - Create Professional Resumes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="landingPage" class="page active">
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-file-text"></i>
+                        </div>
+                        <span class="logo-text">ResumeWizard</span>
+                    </div>
+                    <nav class="nav">
+                        <a href="#features">Features</a>
+                        <a href="#templates">Templates</a>
+                        <a href="#about">About</a>
+                    </nav>
+                    <button class="btn btn-outline">Sign In</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Create Your Perfect <span class="gradient-text">Resume</span>
+                    </h1>
+                    <p class="hero-description">
+                        Build professional resumes in minutes with our AI-powered platform.
+                        Choose from expertly designed templates and get hired faster.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" onclick="goToBuilder()">
+                            Start Building Free
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-outline btn-large">
+                            View Templates
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose ResumeWizard?</h2>
+                    <p>Everything you need to create a standout resume that gets noticed by employers</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Easy Input</h3>
+                        <p>Simple, guided forms to collect your professional information</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-text"></i>
+                        </div>
+                        <h3>Live Preview</h3>
+                        <p>See your resume update in real-time as you type</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3>Multiple Templates</h3>
+                        <p>Choose from professionally designed resume templates</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>PDF Export</h3>
+                        <p>Download your finished resume as a high-quality PDF</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Land Your Dream Job?</h2>
+                    <p>Join thousands of professionals who have already created their perfect resume with ResumeWizard</p>
+                    <button class="btn btn-secondary btn-large" onclick="goToBuilder()">
+                        Get Started Now
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <div class="logo-icon">
+                                <i class="fas fa-file-text"></i>
+                            </div>
+                            <span class="logo-text">ResumeWizard</span>
+                        </div>
+                        <p>Create professional resumes that get you hired.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Product</h4>
+                            <a href="#">Resume Builder</a>
+                            <a href="#">Templates</a>
+                            <a href="#">AI Assistant</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Support</h4>
+                            <a href="#">Help Center</a>
+                            <a href="#">Contact</a>
+                            <a href="#">Privacy</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Company</h4>
+                            <a href="#">About</a>
+                            <a href="#">Blog</a>
+                            <a href="#">Careers</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 ResumeWizard. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="builderPage" class="page">
+        <header class="builder-header">
+            <div class="container">
+                <div class="builder-header-content">
+                    <div class="builder-nav">
+                        <button class="btn btn-ghost" onclick="goToLanding()">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Home
+                        </button>
+                        <div class="logo">
+                            <div class="logo-icon">
+                                <i class="fas fa-file-text"></i>
+                            </div>
+                            <span class="logo-text">ResumeWizard</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="downloadPDF()">
+                        <i class="fas fa-download"></i>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="builder-container">
+            <div class="container">
+                <div class="builder-layout">
+                    <div class="form-section">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="progress-header">
+                                    <h3>Resume Builder</h3>
+                                    <span class="step-indicator">Step <span id="currentStepNum">1</span> of 4</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progressFill"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-nav">
+                            <button class="step-btn active" data-step="0">Personal Info</button>
+                            <button class="step-btn" data-step="1">Experience</button>
+                            <button class="step-btn" data-step="2">Education</button>
+                            <button class="step-btn" data-step="3">Skills</button>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 id="currentStepTitle">Personal Information</h3>
+                            </div>
+                            <div class="card-content">
+                                <form id="personalInfoForm" class="form-step active">
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="fullName">Full Name</label>
+                                            <input type="text" id="fullName" placeholder="John Doe" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" id="email" placeholder="john@example.com" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">Phone</label>
+                                            <input type="tel" id="phone" placeholder="+1 (555) 123-4567" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location">Location</label>
+                                            <input type="text" id="location" placeholder="New York, NY" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="website">Website (Optional)</label>
+                                            <input type="url" id="website" placeholder="https://johndoe.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="linkedin">LinkedIn (Optional)</label>
+                                            <input type="url" id="linkedin" placeholder="https://linkedin.com/in/johndoe">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="summary">Professional Summary</label>
+                                        <textarea id="summary" placeholder="Write a brief professional summary highlighting your key skills and experience..." rows="4" required></textarea>
+                                    </div>
+                                </form>
+
+                                <div id="experienceForm" class="form-step">
+                                    <div class="form-header">
+                                        <h4>Work Experience</h4>
+                                        <button type="button" class="btn btn-primary" onclick="addExperience()">
+                                            <i class="fas fa-plus"></i>
+                                            Add Experience
+                                        </button>
+                                    </div>
+                                    <div id="experienceList" class="experience-list"></div>
+                                </div>
+
+                                <div id="educationForm" class="form-step">
+                                    <div class="form-header">
+                                        <h4>Education</h4>
+                                        <button type="button" class="btn btn-primary" onclick="addEducation()">
+                                            <i class="fas fa-plus"></i>
+                                            Add Education
+                                        </button>
+                                    </div>
+                                    <div id="educationList" class="education-list"></div>
+                                </div>
+
+                                <div id="skillsForm" class="form-step">
+                                    <div class="form-group">
+                                        <label for="skillInput">Add Skills</label>
+                                        <div class="skill-input-container">
+                                            <input type="text" id="skillInput" placeholder="Type a skill and press Enter">
+                                            <button type="button" class="btn btn-primary" onclick="addSkill()">Add</button>
+                                        </div>
+                                    </div>
+                                    <div class="skills-container" id="skillsContainer"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-nav">
+                            <button class="btn btn-outline" id="prevBtn" onclick="previousStep()" disabled>
+                                <i class="fas fa-arrow-left"></i>
+                                Previous
+                            </button>
+                            <button class="btn btn-primary" id="nextBtn" onclick="nextStep()">
+                                Next
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="preview-section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Live Preview</h3>
+                            </div>
+                            <div class="card-content preview-content">
+                                <div id="resumePreview" class="resume-preview">
+                                    <div class="resume-header">
+                                        <h1 id="previewName">Your Name</h1>
+                                        <div class="contact-info" id="previewContact"></div>
+                                    </div>
+                                    <div class="resume-section" id="previewSummary"></div>
+                                    <div class="resume-section" id="previewExperience"></div>
+                                    <div class="resume-section" id="previewEducation"></div>
+                                    <div class="resume-section" id="previewSkills"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
